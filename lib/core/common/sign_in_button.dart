@@ -17,12 +17,11 @@ class SignInButton extends StatelessWidget {
           style: TextStyle(fontSize: 18),
         ),
         style: ElevatedButton.styleFrom(
-          backgroundColor: Pallete.greyColor,
-          minimumSize: const Size(double.infinity, 50),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-        ),
+            backgroundColor: Pallete.greyColor,
+            minimumSize: const Size(double.infinity, 50),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            )),
       ),
     );
   }

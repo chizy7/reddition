@@ -6,8 +6,8 @@ import 'package:reddit_clone/features/community/controller/community_controller.
 import 'package:reddit_clone/models/community_model.dart';
 import 'package:routemaster/routemaster.dart';
 
-import '../../../../core/common/loader.dart';
-import '../../../../core/common/sign_in_button.dart';
+import '../../../core/common/loader.dart';
+import '../../../core/common/sign_in_button.dart';
 
 class CommunityListDrawer extends ConsumerWidget {
   const CommunityListDrawer({super.key});

@@ -34,10 +34,10 @@ class SearchCommunityDelegate extends SearchDelegate {
   @override
   Widget buildSuggestions(BuildContext context) {
     return ref.watch(searchCommunityProvider(query)).when(
-          data: (communities) => ListView.builder(
-            itemCount: communities.length,
+          data: (communites) => ListView.builder(
+            itemCount: communites.length,
             itemBuilder: (BuildContext context, int index) {
-              final community = communities[index];
+              final community = communites[index];
               return ListTile(
                 leading: CircleAvatar(
                   backgroundImage: NetworkImage(community.avatar),
@@ -55,6 +55,6 @@ class SearchCommunityDelegate extends SearchDelegate {
   }
 
   void navigateToCommunity(BuildContext context, String communityName) {
-    Routemaster.of(context).push('/r/${communityName}');
+    Routemaster.of(context).push('/r/$communityName');
   }
 }

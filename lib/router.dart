@@ -11,7 +11,7 @@ import 'package:reddit_clone/features/community/screens/mod_tools_screen.dart';
 import 'package:reddit_clone/features/user_profile/screens/edit_profile_screen.dart';
 import 'package:reddit_clone/features/user_profile/screens/user_profile_screen.dart';
 import 'package:routemaster/routemaster.dart';
-import 'features/auth/home/screens/home_screen.dart';
+import 'features/home/screens/home_screen.dart';
 import 'features/post/screens/add_post_screen.dart';
 import 'features/post/screens/add_post_type_screen.dart';
 import 'features/post/screens/comments_screen.dart';

@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:reddit_clone/core/common/error_text.dart';
 import 'package:reddit_clone/core/common/loader.dart';
 import 'package:reddit_clone/features/auth/controller/auth_controller.dart';
-import 'package:reddit_clone/features/auth/screens/login_screen.dart';
 import 'package:reddit_clone/models/user_model.dart';
 import 'package:reddit_clone/router.dart';
 import 'package:reddit_clone/theme/pallete.dart';
@@ -41,7 +40,6 @@ class _MyAppState extends ConsumerState<MyApp> {
         .getUserData(data.uid)
         .first;
     ref.read(userProvider.notifier).update((state) => userModel);
-    setState(() {});
   }
 
   @override
@@ -49,8 +47,8 @@ class _MyAppState extends ConsumerState<MyApp> {
     return ref.watch(authStateChangeProvider).when(
           data: (data) => MaterialApp.router(
             debugShowCheckedModeBanner: false,
-            title: 'Reddit Clone',
-            theme: Pallete.darkModeAppTheme,
+            title: 'Reddit Tutorial',
+            theme: ref.watch(themeNotifierProvider),
             routerDelegate: RoutemasterDelegate(
               routesBuilder: (context) {
                 if (data != null) {
@@ -64,7 +62,7 @@ class _MyAppState extends ConsumerState<MyApp> {
             ),
             routeInformationParser: const RoutemasterParser(),
           ),
-          error: (error, StackTrace) => ErrorText(error: error.toString()),
+          error: (error, stackTrace) => ErrorText(error: error.toString()),
           loading: () => const Loader(),
         );
   }
